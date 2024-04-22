@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Video</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #video-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #fullscreen-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #fullscreen-video::-webkit-media-controls {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="fullscreen-video" autoplay loop>
+            <source src="video/troll.mp4" type="video/mp4">
+            <!--Thêm các định dạng video khác ở đây nếu cần-->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('fullscreen-video');
+            video.volume = 1.0; // Thiết lập âm lượng lớn nhất
+            video.play(); // Bắt đầu phát video
+        });
+    </script>    
+</body>
+</html>
